@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activität bearbeiten</title>
+</head>
+<body>
+    <h1>Activität bearbeiten</h1>
+    <form method="post">
+        Name: <input type="text" name="name" value="{{ act.name }}"><br>
+        Ort: <input type="text" name="ort" value="{{ act.ort }}"><br>
+        <button type="submit">Aktualisieren</button>
+    </form>
+    <a href="{{ url_for('overview') }}">Zurück zur Liste</a>
+</body>
+</html>
