@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<title>
+    Activism
+</title>
+</head>
+<body>
+  <font face="Times New Roman" size="7">
+  <h1 align="center">Welcome to Activism</h1>
+  </font>
+    <nav align="center">
+    <font face="Times New Roman" size="6">
+
+        <a href="#" style="display:inline-block;list-style-type:none">Home</a> 
+        <a href="#" style="display:inline-block;list-style-type:none">Overview</a>
+        <a href="#" style="display:inline-block;list-style-type:none">Mission</a>
+ 
+    </font>
+
+    <h1>Vorschläge von unserer hoch professionellen KI nur für dich ;&rpar;</h1>
+    <a href="{{ url_for('neu') }}">Neue Activität hinzufügen</a>
+    <ul>
+        {% for activity in activities %}
+        <li>
+            {{ activity.name }} ({{ activity.ort }})
+            <a href="{{ url_for('bearbeiten', name=activity.name) }}">Bearbeiten</a>
+            <form action="{{ url_for('loeschen', name=activity.name) }}" method="post" style="display:inline;">
+                <button type="submit">Löschen</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    </nav>
+</body>
+<html>
